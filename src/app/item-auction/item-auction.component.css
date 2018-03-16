@@ -1,0 +1,26 @@
+mdl-card-media > img {
+    max-width: 100%;
+  }
+
+mdl-card-media {
+    margin: 0;
+}
+
+mdl-card-actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+}
+
+mdl-card-actions > .mdl-button--icon {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.sub-title h3 {
+    color: #847;
+}
+
+.auc-padding {
+    padding: 50px 50px 50px 50px;
+}

@@ -1,0 +1,30 @@
+<div class="sub-title">
+  <h3>Ending soon</h3>
+</div>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col " *ngFor="let auction of auctions">  
+      <mdl-card-media>
+        <img src="https://source.unsplash.com/mdADGzyXCVE/330x150" alt="derp"/>
+      </mdl-card-media>
+      <mdl-card mdl-shadow="2">
+          
+        <mdl-card-title>
+          <h2 mdl-card-title-text>{{ auction.title }}</h2>
+        </mdl-card-title>
+        <mdl-card-supporting-text>
+          {{ auction.desc }} <br>
+          {{ auction.distance }}
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-colored mdl-ripple>Ending in {{ auction.end_time}} minutes</button>
+        </mdl-card-actions>
+        <mdl-card-menu>
+          <button mdl-button mdl-button-type="icon" mdl-ripple>
+            <mdl-icon>share</mdl-icon>
+          </button>
+        </mdl-card-menu>
+      </mdl-card>
+    
+  </div>
+</div>

@@ -3,3 +3,66 @@
     bottom: 40px;
     right: 40px;
 }
+
+
+.mdl-textfield__input{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.897);
+}
+
+
+.mdl-textfield__label{
+    color: #fff;
+}
+#search-input {
+    color: white;
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    color: white;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(143, 74, 14, 0.884);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+#name {
+    background-color: black;
+    color: white;
+}
+
+.opt-font {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none; 
+}
+
+#title {
+    font-weight: 600;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+
+}

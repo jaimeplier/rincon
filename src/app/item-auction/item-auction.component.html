@@ -1,23 +1,27 @@
+ <!-- jumbotron image -->
+ <img src="assets/portada_rincon.jpg" class="jumbotron" alt="jumbo" />
+
 <div class="sub-title">
-  <h3>Ending soon</h3>
+  <hr>
 </div>
 
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col " *ngFor="let auction of auctions">  
+<div class="mdl-grid" id="items-grid">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone " *ngFor="let auction of auctions">
+    <mdl-card mdl-shadow="2">
       <mdl-card-media>
-        <img src="https://source.unsplash.com/mdADGzyXCVE/330x150" alt="derp"/>
+        <img src= "{{ auction.img_src }}" alt="derp"/>
       </mdl-card-media>
-      <mdl-card mdl-shadow="2">
-          
         <mdl-card-title>
-          <h2 mdl-card-title-text>{{ auction.title }}</h2>
+          <h2 mdl-card-title-text>{{ auction.title }}</h2> 
         </mdl-card-title>
         <mdl-card-supporting-text>
           {{ auction.desc }} <br>
           {{ auction.distance }}
         </mdl-card-supporting-text>
         <mdl-card-actions mdl-card-border>
-          <button mdl-button mdl-colored mdl-ripple>Ending in {{ auction.end_time}} minutes</button>
+          <div class="end-button">
+            <button mdl-button mdl-colored mdl-ripple >Termina en : {{ auction.end_time}} minutos</button>
+          </div>
         </mdl-card-actions>
         <mdl-card-menu>
           <button mdl-button mdl-button-type="icon" mdl-ripple>

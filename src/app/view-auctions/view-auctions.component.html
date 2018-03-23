@@ -1,17 +1,37 @@
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-orange.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 <div class="demo-container" mdl-shadow="2">
   <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
      <mdl-layout-header>
         <mdl-layout-header-row>
-           <mdl-layout-title>
-             
-              El rincón de la cháchara
+           <mdl-layout-title class="mdl-cell mdl-cell--5-col"><a id="title" routerLink="/">
+             El rincón de la cháchara</a>
             </mdl-layout-title>
            <mdl-layout-spacer></mdl-layout-spacer>
+           <div class="mdl-cell mdl-cell--5-col" >
+              <div class="mdl-textfield mdl-js-textfield ">
+                  <input class="search-box mdl-textfield__input " type="text" id="sample1">
+                  <label class="mdl-textfield__label " for="sample1">Buscar chácharas</label>
+              </div>
+           </div>
            <!-- Navigation. We hide it in small screens. -->
+           
            <nav class="mdl-navigation mdl-layout--large-screen-only">
-              <a class="mdl-navigation__link" >Iniciar sesión</a>
+              <div class="mdl-cell mdl-cell--2-col select-style">
+                  <select>
+                    <option class="opt-font" value="" disabled selected>Ordenar por:</option>
+                    <option class="opt-font" value="volvo">Terminando pronto</option>
+                    <option class="opt-font" value="saab">Precio mas bajo</option>
+                    <option class="opt-font" value="mercedes">Precio mas alto</option>
+                    <option class="opt-font" value="audi">Mejores opiniones</option>
+                  </select>
+                </div>
+      
+              <!--
+                <a class="mdl-navigation__link" >Iniciar sesión</a>
+              -->
+              
               <!--
               <a class="mdl-navigation__link" >Link</a>
               <a class="mdl-navigation__link" >Link</a>
@@ -19,18 +39,25 @@
            </nav>
         </mdl-layout-header-row>
      </mdl-layout-header>
+
+     <!-- Barra de navegación -->
+
      <mdl-layout-drawer>
-        <mdl-layout-title> {{ user.fname }} {{ user.lname}} </mdl-layout-title>
+        <mdl-layout-title id="name"> {{ user.fname }} {{ user.lname}} </mdl-layout-title>
         <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" href="#">Perfil</a>
-           <a class="mdl-navigation__link" href="#">Mis chacharas</a>
-           <a class="mdl-navigation__link" href="#">Estadísticas</a>
+           <a class="mdl-navigation__link" routerLink="/perfil">Perfil</a>
+           <a class="mdl-navigation__link" routerLink="/mi-chachara">Mis chacharas</a>
+           <a class="mdl-navigation__link" routerLink="#">Estadísticas</a>
+           <a class="mdl-navigation__link" routerLink="#">Cerrar sesión</a>
         </nav>
      </mdl-layout-drawer>
      <mdl-layout-content>
-        <!-- Your content goes here -->
 
-        <app-item-auction></app-item-auction>
+     <!-- Your content goes here -->
+
+    
+
+     <router-outlet></router-outlet>
 
         <button class="add-chachara" mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple>
             <mdl-icon>add</mdl-icon>

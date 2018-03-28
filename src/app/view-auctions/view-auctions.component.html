@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-orange.min.css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 <div class="demo-container" mdl-shadow="2">
   <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
@@ -37,7 +36,21 @@
               <a class="mdl-navigation__link" >Link</a>
               -->
            </nav>
+           
         </mdl-layout-header-row>
+
+        <!--
+          ####TODO: use tabs to access data, add router programaticly
+
+            <mdl-layout-header-row>
+                <a routerLink="{{  }}"></a>
+                <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
+                <a href="#scroll-tab-2" class="mdl-layout__tab">Tab 2</a>
+                <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
+                <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
+            </mdl-layout-header-row>
+          -->
+
      </mdl-layout-header>
 
      <!-- Barra de navegación -->
@@ -59,7 +72,9 @@
 
      <router-outlet></router-outlet>
 
-        <button class="add-chachara" mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple>
+        <button class="add-chachara" mdl-button  
+        mdl-button-type="fab" mdl-colored="accent" mdl-ripple
+        (click)="addChachara()">
             <mdl-icon>add</mdl-icon>
         </button>
 

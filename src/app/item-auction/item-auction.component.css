@@ -29,10 +29,8 @@ mdl-card-actions > .mdl-button--icon {
     width: 50%;
     margin-left: 25%;
     height: 55px;
-    background-image: url(assets/hr-style.png);
+    background: url(/assets/hr-style.png);
     background-repeat: no-repeat;
-    
-
 } 
 
 .auc-padding {
@@ -44,9 +42,38 @@ mdl-card-actions > .mdl-button--icon {
 }
 
 .end-button {
+    text-align: center;
     justify-content: center;
 }
 
 .jumbotron {
     width: 100%;
+}
+
+.time-left {
+    padding-left: 2rem;
+}
+
+.position-button {
+    padding-left: 4rem;
+    
+}
+
+mdl-card-title {
+    cursor: pointer;
+    height: 300px;
+}
+
+mdl-card-title h2 {
+    text-align: right;
+}
+
+.title-style {
+    color: #fff;
+    text-align: center;
+    font-weight: 12;
+}
+
+.clickable :hover {
+    cursor: pointer;
 }

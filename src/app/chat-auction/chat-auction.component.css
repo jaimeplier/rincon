@@ -1,0 +1,10 @@
+.mdl-layout__drawer {
+    width: 150px;
+     /* left: -50px; */
+  }
+  
+  .mdl-layout__drawer.is-visible {
+    left: 0;
+  }
+
+ 

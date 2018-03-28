@@ -6,21 +6,32 @@
 </div>
 
 <div class="mdl-grid" id="items-grid">
-  <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone " *ngFor="let auction of auctions">
-    <mdl-card mdl-shadow="2">
-      <mdl-card-media>
-        <img src= "{{ auction.img_src }}" alt="derp"/>
-      </mdl-card-media>
-        <mdl-card-title>
-          <h2 mdl-card-title-text>{{ auction.title }}</h2> 
+  <div class="mdl-cell mdl-typography--text-right mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone " 
+  *ngFor="let auction of auctions">
+    <mdl-card mdl-shadow="2" >
+      <!-- <mdl-card-media>
+        <img (click)="goToItem(auction.end_time)" src= "{{ auction.img_src }}" alt="derp"/>
+      </mdl-card-media> -->
+      
+        <mdl-card-title mdl-card-expand class="clickable"
+          (click)="goToItem(auction.auc_id)"
+          [ngStyle]=
+          "{background: 'url('+ auction.img_src+') center / cover', 
+          'background-repeat': 'no-repeat',
+          'background-size' : 'cover'          
+        }">
+          <h2 class="mdl-card__title-text title-style">{{ auction.title }}</h2> 
         </mdl-card-title>
         <mdl-card-supporting-text>
           {{ auction.desc }} <br>
-          {{ auction.distance }}
         </mdl-card-supporting-text>
         <mdl-card-actions mdl-card-border>
-          <div class="end-button">
-            <button mdl-button mdl-colored mdl-ripple >Termina en : {{ auction.end_time}} minutos</button>
+            <div class="time-left">
+              Termina en:<br>
+              {{ auction.end_time }} min  
+            </div>
+          <div class="end-button position-button">
+            <button mdl-button mdl-colored mdl-ripple > Ahora en: ${{ auction.end_time}} </button>
           </div>
         </mdl-card-actions>
         <mdl-card-menu>

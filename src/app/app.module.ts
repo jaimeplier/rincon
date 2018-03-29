@@ -6,13 +6,13 @@ import { HttpModule } from "@angular/http";
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
-import { ViewAuctionsComponent } from './view-auctions/view-auctions.component';
-import { ItemAuctionComponent } from './item-auction/item-auction.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ItemViewComponent } from './item-view/item-view.component';
-import { ProfileItemsComponent } from './profile-items/profile-items.component';
-import { ChatAuctionComponent } from './chat-auction/chat-auction.component';
-import { ImgViewComponent } from './img-view/img-view.component';
+import { ViewAuctionsComponent } from './home/view-auctions/view-auctions.component';
+import { ItemAuctionComponent } from './home/item-auction/item-auction.component';
+import { ProfileComponent } from './profile-view/profile/profile.component';
+import { ItemViewComponent } from './active-item-view/item-view/item-view.component';
+import { ProfileItemsComponent } from './profile-view/profile-items/profile-items.component';
+import { ChatAuctionComponent } from './active-item-view/chat-auction/chat-auction.component';
+import { ImgViewComponent } from './active-item-view/img-view/img-view.component';
 
 const appRoutes:Routes = [
   { path: '', component: ItemAuctionComponent  },

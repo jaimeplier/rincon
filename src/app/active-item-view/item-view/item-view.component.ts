@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ItemViewComponent implements OnInit {
 
   constructor() { }
+  // Make http call to get item from router and set it as this.item
 
   ngOnInit() {
   }

@@ -23,18 +23,20 @@ export class ImgViewComponent implements OnInit {
               previewForceFullscreen: false,
               previewInfinityMove: true,
               previewCloseOnClick: true,
-              previewFullscreen: true,
-              
+              previewFullscreen: false,
+              imageArrowsAutoHide: true,
+                        
           },
           // max-width 800
           {
-              breakpoint: 800,
+              breakpoint: 500,
               width: '100%',
               height: '600px',
               imagePercent: 80,
               thumbnailsPercent: 30,
               thumbnailsMargin: 10,
-              thumbnailMargin: 20
+              thumbnailMargin: 20,
+              
           },
           // max-width 400
           {
@@ -47,9 +49,9 @@ export class ImgViewComponent implements OnInit {
 
       this.galleryImages = [
         {
-          small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
-          medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
-          big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg'
+          small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+           medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+          big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg' 
         },
         {
           small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/2-small.jpeg',

@@ -1,10 +1,50 @@
-.mdl-layout__drawer {
-    width: 150px;
-     /* left: -50px; */
-  }
-  
-  .mdl-layout__drawer.is-visible {
-    left: 0;
+mdl-card {
+  width: 100%;
+}
+
+mdl-card-actions {
+  width: 100%;
+}
+
+  .card-style {
+    width: 500px;
   }
 
- 
+  .textarea-style{
+    width: 60%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  .puja-btn {
+    padding-left: 20px;
+  }
+
+  mdl-card-supporting-text {
+    height: 400px;
+    overflow: auto;
+  }  
+
+  .time-title {
+    width: 100%;
+/*     border: 1px solid black;*/
+    color: rgb(250, 237, 237) !important;
+    background-color: rgba(209, 141, 15, 0.74);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.name-chat {
+  font-weight: 3;
+}
+
+.msg-chat {
+  border-bottom-width: 3;
+}
+
+.display-time {
+  text-align: right;
+  float: right;
+}

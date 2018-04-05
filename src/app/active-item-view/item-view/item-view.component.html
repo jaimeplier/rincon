@@ -1,14 +1,34 @@
 <div class="img-grid mdl-grid">
     <div class="mdl-cell mdl-cell--5-col">
-      <div class="">
-        <!-- add content here -->
-        <p>Here goes the img gallery</p>
-        <app-img-view></app-img-view>
+      <div class="auc-text">
+        <h3 class="auc-title"> {{ this.auction.title }}</h3>
       </div>
+        <!-- add content here -->
+      <app-img-view></app-img-view>
     </div>
-    <div class="mdl-cell mdl-cell--5-col">
+    <div class="mdl-cell mdl-cell--4-col chat">
       <!-- also here -->
       <app-chat-auction></app-chat-auction>
       <!-- 2nd column -->
     </div>
+
+    <div class="mdl-cell mdl-cell--2-col">
+        <!-- Div to fix  12 col width -->
+    </div>  
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <hr class="hr-item">
+    </div>
+
+    <div class="mdl-cell mdl-cell--3-col">
+      <p>// Subastada por </p>
+      <p>Inserte rating</p>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <h3 class=""> {{ this.auction.title }}</h3>
+        <p class="subtitle"> {{ this.auction.desc }}</p>
+    </div>
+
+    <div><p>Subastas Relacionadas</p></div>
+
   </div>

@@ -1,0 +1,20 @@
+.chat {
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+.subtitle {
+    text-indent: 2em;
+}
+
+.auc-text {
+    text-align: center;
+}
+
+.hr-item hr {
+    border-top: 3px double #8c8b8b;
+}
+
+app-img-view {
+    padding-left: 20px;
+}

@@ -1,36 +1,52 @@
+    <!-- 
+    <div>
+      <input type="text" #msgInput name="" value="">
+      <button (click)="sendMsg(msgInput.value)">Send</button>
+      <br>
+      <p>{{messages2}} </p>
+  </div> -->
     
-    <h4>Ahora en: $20
+    <h4>Ahora en: ${{ auction.last_bid}}
     </h4>
-    
+    <div >
     <mdl-card mdl-shadow="4" card-style  mdl-card--expand>
-      <mdl-card-actions mdl-card-border>
-          <button class="time-title mdl-button mdl-js-button mdl-button--colored puja-btn" > 
+      <mdl-card-actions mdl-card-border >
+          <button class="time-title mdl-button 
+          mdl-button--accent mdl-button--raised mdl-button--colored " > 
            <!-- {{ timeLeft ? "Termina en:" : "" }}  -->{{ displayTime }} </button>
       </mdl-card-actions>
-      <mdl-card-supporting-text >
-        <div class="msg-chat" *ngFor="let msg of messages">
-          <span class="mdl-chip mdl-chip--contact">
+      <mdl-card-supporting-text ngx-auto-scroll lock-y-offset="10" observe-attributes>
+          <div #messages class="msg-chat" *ngFor="let msg of messages">
+            <span class="mdl-chip mdl-chip--contact chip-user">
             <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">{{ msg.name[0] | uppercase }}</span>
             <span class="mdl-chip__text">{{ msg.puja }} </span>
-          </span>
-          
+            </span>
+            <p class="msg-text">{{ msg.text }}</p>
         </div>
       </mdl-card-supporting-text>            
 
       <mdl-card-actions mdl-card-border mdl-card--expand>
         <!-- <div class="mdl-grid"> -->
           <!-- <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--12-col-phone"> -->
-            <button class="mdl-button mdl-js-button mdl-button--colored puja-btn" > Pujar: $20 </button>
+
+      <!-- IMPORTANT! Add a proper form to submit this!!!!! -->
+          <div (keydown.enter)="enterKey(newBid,inputBox.value)">
+            <button class="mdl-button mdl-js-button mdl-button--colored puja-btn" 
+            (click)="pushBid(newBid,inputBox.value)" > 
+            Pujar: ${{ newBid }} </button>
             <div class="mdl-textfield mdl-js-textfield textarea-style">
-                <input class="mdl-textfield__input" type="text" id="sample1" placeholder="Enviar mensaje...">
-              </div>
+              <input #inputBox class="mdl-textfield__input" type="text" 
+              id="sample1" placeholder="Enviar mensaje...">
+            </div>
+          </div>
            <!-- </div> --> 
            <!-- <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">  -->
            <!-- </div>  -->
          <!-- </div> --> 
     
     </mdl-card-actions>
- 
+    </mdl-card>
+    </div>
   
   
   

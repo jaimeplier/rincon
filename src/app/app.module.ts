@@ -4,6 +4,8 @@ import { MdlModule } from "@angular-mdl/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { NgxGalleryModule } from 'ngx-gallery';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+import {NgxAutoScrollModule} from "ngx-auto-scroll";
 
 import { AppComponent } from './app.component';
 import { ViewAuctionsComponent } from './home/view-auctions/view-auctions.component';
@@ -20,6 +22,8 @@ const appRoutes:Routes = [
   { path: 'mi-chachara', component: ProfileItemsComponent  },
   { path: 'chachara/:id', component: ItemViewComponent  },
 ]
+
+const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
 @NgModule({
   declarations: [
@@ -38,6 +42,8 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     NgxGalleryModule,
+    SocketIoModule.forRoot(config),
+    NgxAutoScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

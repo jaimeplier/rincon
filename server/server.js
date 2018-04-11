@@ -7,6 +7,8 @@ var app = express();
 // Setting for development
 /* app.use(express.static(path.join(__dirname, 'public/dist')));
  */
+app.set('port', (process.env.PORT || 8988));
+
 app.use(express.static(path.join(__dirname, '/dist')));
 
 app.get('*', function(req, res, next) {
@@ -29,8 +31,8 @@ io.on('connection', function (socket) {
     })
 });
 
-server.listen(8988, () => {
-    console.log("Server is running!");
+server.listen(app.get('port'), () => {
+    console.log("Server is running! on: ", app.get('port'));
 });
 
 

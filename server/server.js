@@ -9,7 +9,7 @@ var app = express();
  */
 app.set('port', (process.env.PORT || 8988));
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, 'public/dist')));
 
 app.get('*', function(req, res, next) {
   res.sendFile(__dirname+"/public/dist/index.html");

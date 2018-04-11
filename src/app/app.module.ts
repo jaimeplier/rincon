@@ -23,7 +23,9 @@ const appRoutes:Routes = [
   { path: 'chachara/:id', component: ItemViewComponent  },
 ]
 
-const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
+var urlPort = process.env.PORT || "http://localhost:8988" ;
+
+const config: SocketIoConfig = { url: urlPort, options: {} };
 
 @NgModule({
   declarations: [

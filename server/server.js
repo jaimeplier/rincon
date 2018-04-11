@@ -11,8 +11,13 @@ app.set('port', (process.env.PORT || 8988));
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
-app.get('*', function(req, res, next) {
+// Dev environment
+/* app.get('*', function(req, res, next) {
   res.sendFile(__dirname+"/public/dist/index.html");
+}); */
+
+app.get('*', function(req, res, next) {
+  res.sendFile(__dirname+"/dist/index.html");
 });
 
 

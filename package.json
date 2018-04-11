@@ -2,16 +2,22 @@
   "name": "rincon",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "8.1.4",
+    "npm": "5.0.3"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.config.json",
+    "start": "node ./server/server.js ",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~1.7.3",    
     "@angular-mdl/core": "^4.0.8",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -23,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "dialog-polyfill": "^0.4.9",
     "font-awesome": "^4.7.0",
     "getmdl-select": "^2.0.1",
     "mongodb": "^3.0.5",

@@ -10,9 +10,16 @@
   <link rel = "stylesheet" 
   href = "https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  
+  <link rel="stylesheet" type="text/css" href="dialog-polyfill.css" />
+
 </head>
+<!-- <script>
+    let result = this.dialogService.alert('This is a simple Alert');
+    result.subscribe( () => console.log('alert closed') );
+</script> -->
+<script src="dialog-polyfill.js"></script>
 <body>
   <app-root></app-root>
+  <dialog-outlet></dialog-outlet>
 </body>
 </html>

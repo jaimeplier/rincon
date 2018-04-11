@@ -11,6 +11,7 @@ import { ChatService } from "./chat-auction.service";
 })
 export class ChatAuctionComponent implements OnInit {
   @ViewChild('inputBox') inputBox: ElementRef;
+  @ViewChild('modal') modal: ElementRef;
 
   constructor( private activeItem:ActiveItemService,
               private seedUser:SeedUser,
@@ -18,7 +19,10 @@ export class ChatAuctionComponent implements OnInit {
 
   auction = this.activeItem.auction;
   displayTime;
-  
+  user_lastBid ;
+
+  thisUser = this.seedUser.user.name;
+  // fake params for counter
   timeLeft = 430;
   timeToEnd;
   
@@ -72,13 +76,14 @@ export class ChatAuctionComponent implements OnInit {
               puja: msg.bid
             })
           this.newBid = msg.bid + 1;
+          this.user_lastBid = msg.user;          
         });
       }
 
 
   pushBid(newBid, inputval) {
     inputval = inputval || "";
-    const userName = this.seedUser.user.name;
+    const userName = this.thisUser;
     this.activeItem.pushBid(newBid)
 
     // on success push, update bid, then add to msgs
@@ -91,6 +96,7 @@ export class ChatAuctionComponent implements OnInit {
     this.newBid = this.auction.last_bid + 1;
     this.inputBox.nativeElement.focus();
 
+    this.user_lastBid = userName;
     this.chatService.sendMessage(newBid, inputval, userName);
   }
 
@@ -98,11 +104,16 @@ export class ChatAuctionComponent implements OnInit {
     this.pushBid(newBid, inputVal);
   }
 
+  addSeedUser(user) {
+    this.seedUser.user.name = user;
+    this.thisUser = user;
+    console.log(this.seedUser.user.name)
+  }
+
   messages = [{
     name: 'asdsa',
-    text: 'wasuuup! asdasdf asf sadfs dfs dfsd f sd fsd fs df df gd fgd fgd fg d fgd fgd f gd dgdhfghf fgh fghgf ',
+    text: 'wasuuup! adf gd fgd fgd fg d fgd fgd f gd dgdhfghf fgh fghgf ',
     puja: 22
-  }
-]
+  }]
 
 }

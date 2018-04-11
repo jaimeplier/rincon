@@ -1,15 +1,42 @@
-    <!-- 
-    <div>
-      <input type="text" #msgInput name="" value="">
-      <button (click)="sendMsg(msgInput.value)">Send</button>
-      <br>
-      <p>{{messages2}} </p>
-  </div> -->
-    
-    <h4>Ahora en: ${{ auction.last_bid}}
-    </h4>
+  
+  <!-- Must remove div, only for demo! -->
+
+  <div id="myModal" class="modal"
+  [ngStyle]="{'display': thisUser === '' ? 'block' : 'none' }">
+
+    <div class="modal-content">
+      
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <h4>Nombre:</h4>
+          <!-- [A-Za-z]{3,10} -->
+        <input #inputUser class="mdl-textfield__input user-input" type="text" 
+        id="userName" pattern="[a-zA-Z]+" ng-pattern-restrict>
+        <span class="mdl-textfield__error">Input is not text!</span>
+        <div class="user-input-btn">
+          <button class="mdl-button mdl-js-button mdl-button--raised
+          mdl-button--accent" (click)="addSeedUser(inputUser.value)">
+              Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <div >
     <mdl-card mdl-shadow="4" card-style  mdl-card--expand>
+      <mdl-card-actions mdl-card-border >
+        <div [ngStyle]="{'display': user_lastBid ? 'inline-block' : 'none' }">
+          <span class="mdl-chip mdl-chip--contact">
+              <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">
+                {{ user_lastBid ? user_lastBid[0] : "A" | uppercase }}</span>
+              <span class="mdl-chip__text">{{ user_lastBid }}</span>
+          </span>
+        </div>
+        <div class="last-bid-text">
+          <h6> {{ user_lastBid ? "con" : ''}} ${{ auction.last_bid}}
+          </h6>
+        </div>
+        </mdl-card-actions>
       <mdl-card-actions mdl-card-border >
           <button class="time-title mdl-button 
           mdl-button--accent mdl-button--raised mdl-button--colored " > 

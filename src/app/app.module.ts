@@ -5,7 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import {NgxAutoScrollModule} from "ngx-auto-scroll";
+import { NgxAutoScrollModule} from "ngx-auto-scroll";
 
 import { AppComponent } from './app.component';
 import { ViewAuctionsComponent } from './home/view-auctions/view-auctions.component';

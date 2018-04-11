@@ -1,0 +1,5 @@
+.ngg-slideshow {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
